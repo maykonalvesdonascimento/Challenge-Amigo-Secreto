@@ -10,14 +10,14 @@
 * [Acesso ao Projeto](#acesso-ao-projeto)
 * [Tecnologias utilizadas](#tecnologias-utilizadas)
 * [Autor](#autor)
-* [Conclusão](#conclusão)
 
 <h1 id="status-do-projeto">Status do Projeto</h1>
 
 <img loading="lazy" src="http://img.shields.io/static/v1?label=STATUS&message=%20Concluido&color=GREEN&style=for-the-badge"/>
 
 <h1 id="descricao-do-projeto">Descrição do Projeto</h1>
-<p>Desafio criado pela Alura, que foi produzido utilizando Javascript como linguagem de programação, HTML e CSS como a parte visual. Com o objetivo de cadastrar amigos e após sortear um desses amigos cadastrado.</p>
+<p>Desafio criado pela Alura, que foi produzido utilizando Javascript como linguagem de programação pra criar as funcionalidades, HTML e CSS como a parte visual. Com o objetivo de cadastrar amigos e após sortear um desses amigos cadastrado.
+Nesse projeto utilizei conhecimentos adquiridos em lógica de programação( estrutura de repetição, estrutura de decisão, funções , arrays ,... ) em javascript ( validação e manipulação de strings)</p>
 <h1 id ="funcionalidades-e-demonstracao-da-aplicacao">Funcionalidades e Demonstração da Aplicação</h1>
 As principais funcionalidades do aplicativo são:
 <ul>
