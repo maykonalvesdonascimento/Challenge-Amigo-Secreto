@@ -12,6 +12,7 @@ function adicionarAmigo(){
         }else{
             listaAmigos.push(amigo);
             preencherCampo('listaAmigos',listaAmigos);
+            
         }
     }
     limparCampo();
@@ -36,4 +37,12 @@ function limparCampo(){
 function preencherCampo(id, texto){
     campo = document.getElementById(id).innerHTML=texto;
 
+}
+
+function sortearAmigo(){
+    numeroAleatorio = parseInt(Math.random()*listaAmigos.length);
+ 
+
+    texto =  `O amigo secreto sorteado é ${listaAmigos[numeroAleatorio]}`;
+       preencherCampo('resultado',texto);
 }
