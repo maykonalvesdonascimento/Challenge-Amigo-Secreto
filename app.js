@@ -54,5 +54,6 @@ function sortearAmigo(){
     texto =  `O amigo secreto sorteado é ${listaAmigos[numeroAleatorio]}`;
     preencherCampo('resultado',texto);
     preencherCampo('listaAmigos','');
+    limparCampo();
     listaAmigos=[];
 }
