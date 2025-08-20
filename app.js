@@ -1,9 +1,11 @@
-//O principal objetivo deste desafio é fortalecer suas habilidades em lógica de programação. Aqui você deverá desenvolver a lógica para resolver o problema.
 
 let listaAmigos = [];
-
+//Verifica se amigo foi digitado corretamente e adiciona na lista
 function adicionarAmigo(){
     amigo = document.querySelector('input').value;
+    if(listaAmigos.length==0){
+        preencherCampo('resultado','');
+    }
     if(amigo=='' || amigo == null || amigo === undefined || !contemApenasLetrasOuEspaco(amigo)){
         alert('Por favor, insira um nome válido');
     }else{
@@ -11,7 +13,13 @@ function adicionarAmigo(){
             alert('Amigo já cadastrado, cadastre outro amigo');
         }else{
             listaAmigos.push(amigo);
-            preencherCampo('listaAmigos',listaAmigos);
+            let i = 0 ;
+            let texto ='';
+            for (i=0;i<listaAmigos.length;i++){
+                texto = texto +  '<li>'+ listaAmigos[i] + '</li>';
+            }
+
+            preencherCampo('listaAmigos',texto);
             
         }
     }
@@ -30,6 +38,7 @@ function contemApenasLetrasOuEspaco(str) {
   return expressaoRegular.test(str);
 }
 
+//Limpa o Campo de texto
 function limparCampo(){
     amigo = document.querySelector('input');
     amigo.value='';
@@ -39,10 +48,11 @@ function preencherCampo(id, texto){
 
 }
 
+//Sorteia um amigo dentre cadastrado na lista
 function sortearAmigo(){
     numeroAleatorio = parseInt(Math.random()*listaAmigos.length);
- 
-
     texto =  `O amigo secreto sorteado é ${listaAmigos[numeroAleatorio]}`;
-       preencherCampo('resultado',texto);
+    preencherCampo('resultado',texto);
+    preencherCampo('listaAmigos','');
+    listaAmigos=[];
 }
