@@ -4,9 +4,9 @@ let listaAmigos = [];
 function adicionarAmigo(){
     amigo = document.querySelector('input').value;
     if(listaAmigos.length==0){
-        preencherCampo('resultado','');
+       limparResultados();
     }
-    if(amigo=='' || amigo == null || amigo === undefined || !contemApenasLetrasOuEspaco(amigo)){
+    if(amigo=='' || amigo == null || amigo === undefined || !contemApenasLetrasOuEspaco(amigo) || verificarEspacos(amigo)){
         alert('Por favor, insira um nome válido');
     }else{
         if(listaAmigos.includes(amigo)){
@@ -25,6 +25,15 @@ function adicionarAmigo(){
     }
     limparCampo();
     
+}
+//Verifica se a pessoa só digitou espaços
+function verificarEspacos(str){
+    if(str.replace(/ /g,'')==''){
+        return true;
+    }else{
+        return false;
+    }
+
 }
 
 //Verificador que evita que digitem números no nome do amigo.
@@ -50,10 +59,20 @@ function preencherCampo(id, texto){
 
 //Sorteia um amigo dentre cadastrado na lista
 function sortearAmigo(){
+        limparCampo();
+    limparResultados();
+    if(listaAmigos.length==0){
+        alert('Não existe nenhum amigo cadastrado, cadastre amigos para poder sortear');
+    }else{
     numeroAleatorio = parseInt(Math.random()*listaAmigos.length);
     texto =  `O amigo secreto sorteado é ${listaAmigos[numeroAleatorio]}`;
     preencherCampo('resultado',texto);
-    preencherCampo('listaAmigos','');
-    limparCampo();
     listaAmigos=[];
+    }
+
+}
+
+function limparResultados(){
+     preencherCampo('listaAmigos','');
+     preencherCampo('resultado','');
 }
